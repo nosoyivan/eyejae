@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Foundation | Welcome</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- Header.html -->
+
+  <div class="wrapper">
+
+    <a class="site-header" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <div class="text-center header-sub">
+      <a href="/info/">Info</a>
+      <a href="/music/">Music</a>
+      <!--a href="#">Film</a-->
+      <a href="/photo/">Photo</a>
+      <a href="/food/">Food</a>
+      <a href="/work/">Work</a>
+      <!--a href="#">Lifestyle</a-->
+    </div>
+
+  </div>
+
+<!-- Header.html -->
+
+<div class="row" id="content">
+  <div class="medium-8 columns">
+
+    {{ content }}
+
+  </div>
+  <div class="medium-3 columns" data-sticky-container>
+    <div class="sticky" data-sticky data-anchor="content">
+      <ol>
+            <p class="post-meta">Recent Posts</p>
+              {% for post in site.posts | limit:3 %} <!-- for1 -->
+            <li>
+              <span class="post-meta">
+                  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">
+                    {{ post.title | strip_html | strip_newlines }} </a><br />
+                    {{ post.date | date: "%b %-d" }} | <a href="/{{ post.categories }}">{{ post.categories }}</a>
+              </span>
+            </li>
+          {% endfor %}
+      </ol>
+
+      <a class="twitter-timeline" href="https://twitter.com/eyejaePlas" data-widget-id="716367557955952640">Tweets by @eyejaePlas</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </div>
+  </div>
+</div>
+
+<!-- footer.html -->
+
+<div class="row">
+
+  <div class="large-12 columns" style="margin-bottom: 15px;">
+
+      <div class="row">
+
+        <div class="large-3 columns"><br></div>
+
+        <div class="large-6 columns site-footer" align="center">
+
+          <div class="row">
+
+            <div class="large-5 columns site-footer-1">
+
+              <p>Designed <i class="fa fa-laptop fa"></i> By Me</p>
+              <p>Using <i class="fa fa-code fa"></i> <a href="https://jekyllrb.com/" target="_blank">Jekyll</a></p>
+              <p>Stock Images <i class="fa fa-camera fa"></i> <a href="{{ post.url }}/assets/img/images.txt" target="_blank">used</a></p>
+
+            </div>
+            <div class="small-2 columns"></div>
+
+            <div class="large-5 columns site-footer-2" align="left" style="line-height: 1.6em;">
+
+              <i class="fa fa-twitter fa"></i>  twitter<br />
+              <i class="fa fa-instagram fa"></i>  instagram<br />
+              <i class="fa fa-youtube fa"></i>  youtube<br />
+              <i class="fa fa-soundcloud fa"></i>  soundcloud
+
+            </div>
+
+          </div>
+
+          Copyright @2016 - <a href="http://ivanjplas.com" target="_blank">Ivan J. Plas</a> - All rights reserved
+
+        </div>
+
+        <div class="large-3 columns"><br></div>
+
+      </div>
+  </div>
+</div>
+
+<!-- footer.html -->
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script>
+      $(document).foundation();
+</script>
+</body>
+</html>

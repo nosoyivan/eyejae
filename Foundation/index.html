@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <ul class="post-list">
+
+    {% for post in site.posts %}
+
+      <li>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <span class="post-meta">
+          {{ post.date | date: "%b %-d, %Y" }} •
+          <a href="{{ post.categories }}">{{ post.categories }}</a>
+        </span>
+      </li>
+
+      {{ post.photothumb }}
+
+      <div class="post-desc">{{ post.description }}</div>
+      <a href="{{ post.url | prepend: site.baseurl }}">View more</i>
+</a>
+      <hr />
+
+    {% endfor %}
+  </ul>
+
+</div>

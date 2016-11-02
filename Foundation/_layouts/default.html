@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+  {% include header.html %}
+
+  <body>
+
+
+
+      <div class="row" style="margin-top: 80px;" id="content">
+        <div class="medium-7 medium-offset-1 columns">
+
+          {{ content }}
+
+        </div>
+        <div class="medium-3 columns" data-sticky-container>
+          <div class="sticky" data-sticky data-anchor="content">
+              <p class="post-meta">Recent Posts</p>
+              {% for post in site.posts | limit:3 %} <!-- for1 -->
+              <span class="post-meta">
+              <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">
+                {{ post.title | strip_html | strip_newlines }} </a><br />
+                {{ post.date | date: "%b %-d" }} | <a href="/{{ post.categories }}">{{ post.categories }}</a>
+              </span>
+              <div style="border-bottom: thin solid #cecece;"></div>
+            {% endfor %}
+
+            <div>
+
+              <a class="twitter-timeline" href="https://twitter.com/eyejaePlas" data-widget-id="716367557955952640">Tweets by @eyejaePlas</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
